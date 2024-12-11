@@ -18,4 +18,13 @@ public class UseObjectMapper {
             throw new RuntimeException(e);
         }
     }
+
+
+    public void ObjectToJson() throws JsonProcessingException {
+        User user = new User("garden", 32);
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        String json = objectMapper.writeValueAsString(user);
+        System.out.println(json);
+    }
 }
